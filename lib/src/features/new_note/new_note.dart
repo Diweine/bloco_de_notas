@@ -1,13 +1,70 @@
+import 'package:bloco_de_notas/src/features/note_list/note_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:bloco_de_notas/src/shared/constants/app_colors.dart';
+import 'package:bloco_de_notas/src/shared/constants/text_styles.dart';
 
 class NewNotePage extends StatefulWidget {
   const NewNotePage({Key? key}) : super(key: key);
 
   @override
   _NewNotePageState createState() => _NewNotePageState();
+}
+
+class NewNoteButton extends StatefulWidget {
+  const NewNoteButton({Key? key}) : super(key: key);
+
+  @override
+  _NewNoteButtonState createState() => _NewNoteButtonState();
+}
+
+class _NewNoteButtonState extends State<NewNoteButton> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (BuildContext context) => NoteListPage(),
+          ),
+        );
+      },
+      child: Container(
+        width: 73.0,
+        height: 32.0,
+        decoration: BoxDecoration(
+          gradient: AppColors.blueGradientAppBar,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(4.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.12),
+              offset: Offset(0.0, 1.0),
+              blurRadius: 5.0,
+            ),
+            BoxShadow(
+              color: Colors.black.withOpacity(0.14),
+              offset: Offset(0.0, 2.0),
+              blurRadius: 2.0,
+            ),
+            BoxShadow(
+              color: Colors.black.withOpacity(0.20),
+              offset: Offset(0.0, 3.0),
+              blurRadius: 1.0,
+              spreadRadius: -2.0,
+            ),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            "SALVAR",
+            style: TextStyles.white14w500Roboto,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _NewNotePageState extends State<NewNotePage> {
@@ -76,14 +133,14 @@ class _NewNotePageState extends State<NewNotePage> {
                               fontWeight: FontWeight.w700,
                               fontSize: 16.0,
                               letterSpacing: 0.15,
-                              color: Colors.black.withOpacity(0.54),
+                              color: AppColors.preto54,
                             ),
                             labelStyle: TextStyle(
                               fontFamily: "Roboto",
                               fontWeight: FontWeight.w700,
                               fontSize: 16.0,
                               letterSpacing: 0.15,
-                              color: Colors.black.withOpacity(0.54),
+                              color: AppColors.preto54,
                             ),
                             border: InputBorder.none,
                             errorBorder: InputBorder.none,
@@ -147,7 +204,7 @@ class _NewNotePageState extends State<NewNotePage> {
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400,
                         letterSpacing: 0.15,
-                        color: Colors.black.withOpacity(0.54),
+                        color: AppColors.preto54,
                       ),
                       border: InputBorder.none,
                       errorBorder: InputBorder.none,
@@ -159,11 +216,12 @@ class _NewNotePageState extends State<NewNotePage> {
                   ),
                   SizedBox(
                     height: 24.0,
-                  )
+                  ),
                 ],
               ),
             ),
           ),
+          Positioned(bottom: 88, right: 32, child: NewNoteButton()),
           Visibility(
             visible: MediaQuery.of(context).viewInsets.bottom == 0,
             child: Align(
@@ -184,35 +242,35 @@ class _NewNotePageState extends State<NewNotePage> {
                           onPressed: () {},
                           icon: Icon(
                             Icons.date_range,
-                            color: Colors.black.withOpacity(0.54),
+                            color: AppColors.preto54,
                           ),
                         ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.attach_file_outlined,
-                            color: Colors.black.withOpacity(0.54),
+                            color: AppColors.preto54,
                           ),
                         ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.favorite_border,
-                            color: Colors.black.withOpacity(0.54),
+                            color: AppColors.preto54,
                           ),
                         ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.share,
-                            color: Colors.black.withOpacity(0.54),
+                            color: AppColors.preto54,
                           ),
                         ),
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.delete,
-                            color: Colors.black.withOpacity(0.54),
+                            color: AppColors.preto54,
                           ),
                         ),
                       ],
