@@ -28,7 +28,7 @@ class NoteListController {
         creationDate: '06/07/21',
         isFavorite: true,
         ishasAttachment: true,
-        colorNote: AppColors.roxo,
+        colorNote: AppColors.roxo1,
         schedulingDate: '29/07/21'),
     NoteData(
         title: 'Ideias para o novo app 2022',

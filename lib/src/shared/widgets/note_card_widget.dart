@@ -77,7 +77,9 @@ class NoteCard extends StatelessWidget {
               child: Text(
                 noteData.contents,
                 style: TextStyle(
+                  height: 1.35,
                   fontSize: 14.0,
+                  color: AppColors.preto54,
                 ),
               ),
             ),
@@ -87,8 +89,10 @@ class NoteCard extends StatelessWidget {
               child: Text(
                 'Criação: ${noteData.creationDate}',
                 style: TextStyle(
-                  fontSize: 10.0,
+                  fontSize: 11.0,
                   fontStyle: FontStyle.italic,
+                  color: AppColors.preto54,
+                  height: 1.3,
                 ),
               ),
             ),

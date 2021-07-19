@@ -83,7 +83,7 @@ class _NewNotePageState extends State<NewNotePage> {
       value: "verde",
     ),
     DropDownItemData(
-      color: AppColors.roxo,
+      color: AppColors.roxo1,
       value: "roxo",
     ),
     DropDownItemData(

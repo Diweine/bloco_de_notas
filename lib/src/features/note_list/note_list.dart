@@ -16,6 +16,7 @@ class NoteListPage extends StatefulWidget {
 
 class _NoteListState extends State<NoteListPage> {
   final controller = NoteListController();
+  final scrollcontroller = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,18 +32,21 @@ class _NoteListState extends State<NoteListPage> {
           backwardsCompatibility: false,
           systemOverlayStyle:
               SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                "assets/images/notes_logo.png",
-                height: 35.0,
-              ),
-              Image.asset(
-                "assets/images/journal.png",
-                height: 40.0,
-              ),
-            ],
+          title: Padding(
+            padding: const EdgeInsets.only(top: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/images/notes_logo.png",
+                  height: 35.0,
+                ),
+                Image.asset(
+                  "assets/images/journal.png",
+                  height: 40.0,
+                ),
+              ],
+            ),
           ),
         ),
         body: Column(
@@ -91,7 +95,7 @@ class _NoteListState extends State<NoteListPage> {
                   width: 56.0,
                   height: 56.0,
                   decoration: BoxDecoration(
-                    gradient: AppColors.blueGradientButton1,
+                    gradient: AppColors.blueGradientButton,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
